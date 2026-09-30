@@ -6,7 +6,9 @@ name = "Kula World"
 id = "SCES-01000"
 players = 1
 exe = "disc/SCES_010.00"
-disc = ""
+disc = "disc/Kula World (Europe).cue"
+discs = ["disc/Kula World (Europe).cue"]
+disc_serials = ["SCES-01000"]
 load_address = "0x00011000"
 entry_pc = "0x00069F60"
 text_size = "0x00093000"
@@ -15,8 +17,8 @@ stack_base = "0x801FFFF0"
 # Digests are for data Track 01 (first BINARY FILE / TRACK 01).
 [prepare_disc]
 out_dir = "disc"
-bin_name = "disc1.bin"
-cue_name = "disc1.cue"
+bin_name = "Kula World (Europe).bin"
+cue_name = "Kula World (Europe).cue"
 boot_exe = "SCES_010.00"
 known_sizes = [255123792]
 known_md5 = [
@@ -30,11 +32,13 @@ known_crc32 = [
 ]
 
 [recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
 seeds = "seeds/ghidra_funcs.txt"
 out_dir = "generated"
 strict = true
 
 [runtime]
+openbios = false
 window_title = "kula-world- Recompiled"
 memcard_dir = "saves"
 
